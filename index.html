@@ -8,6 +8,12 @@
       a {
         color: red;
       }
+      li {
+        border: 1px dotted orange;
+      }
+      li a {
+        color: orange;
+      }
       #exec-bio {
         background-color: lightgray;
       }
@@ -16,6 +22,12 @@
       }
       .bio-box a {
         color: green;
+      }
+      .alert {
+        background-color: red;
+      }
+      #exec-bio.alert {
+        background-color: red;
       }
     </style>
   </head>
@@ -33,7 +45,7 @@
       </li>
     </ul>
     <h2>I'm an h2</h2>
-    <div id="exec-bio" class="bio-box">
+    <div id="exec-bio" class="bio-box alert">
       <a href="http://example.com/">I'm a link</a>
     </div>
     <div class="bio-box">
@@ -42,7 +54,7 @@
     <div class="bio-box">
       <a href="http://example.com/">I'm a link</a>
     </div>
-    <div class="bio-box">
+    <div class="bio-box alert">
       <a href="http://example.com/">I'm a link</a>
     </div>
   </body>
