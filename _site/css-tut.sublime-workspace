@@ -4,8 +4,12 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-transform"
+			],
+			[
 				"padd",
-				"padding\tproperty"
+				"padding-top\tproperty"
 			],
 			[
 				"box",
@@ -22,10 +26,6 @@
 			[
 				"padding",
 				"padding-left\tproperty"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"font-s",
@@ -520,10 +520,19 @@
 	"buffers":
 	[
 		{
+			"file": "_includes/footer.html",
+			"settings":
+			{
+				"buffer_size": 282,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 3588,
+				"buffer_size": 3958,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,7 +541,7 @@
 			"file": "_layouts/default.html",
 			"settings":
 			{
-				"buffer_size": 4533,
+				"buffer_size": 4509,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -541,7 +550,7 @@
 			"file": "_includes/header.html",
 			"settings":
 			{
-				"buffer_size": 335,
+				"buffer_size": 233,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -620,6 +629,7 @@
 	},
 	"file_history":
 	[
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/nav-links.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/head.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/index.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/css/reset.css",
@@ -746,8 +756,7 @@
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/controllers/referrals_controller.rb",
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/test/controllers/sessions_controller_test.rb",
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/sessions/destroy.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/config/initializers/non_digest_assets.rb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/config/initializers/assets.rb"
+		"/Users/vanessaespiritosanto/Code/MLS/MLS/config/initializers/non_digest_assets.rb"
 	],
 	"find":
 	{
@@ -783,24 +792,53 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "css/main.css",
+					"file": "_includes/footer.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3588,
+						"buffer_size": 282,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1611,
-								1611
+								281,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3923,
+								3904
 							]
 						],
 						"settings":
@@ -811,27 +849,58 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 970.0,
+						"translation.y": 2837.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "_layouts/default.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4533,
+						"buffer_size": 4509,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								830,
-								830
+								4482,
+								4482
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 149.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_includes/header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								0
 							]
 						],
 						"settings":
@@ -846,35 +915,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_includes/header.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 335,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								315,
-								315
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
