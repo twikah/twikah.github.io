@@ -8,12 +8,40 @@
 				"text-transform"
 			],
 			[
-				"padd",
-				"padding-top\tproperty"
+				"trans",
+				"transform\tproperty"
+			],
+			[
+				"rgba",
+				"rgba()\tbackground-color"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"tran",
+				"transform\tproperty"
+			],
+			[
+				"backgr",
+				"background-size\tproperty"
 			],
 			[
 				"box",
-				"box-shadow\tproperty"
+				"box-sizing"
+			],
+			[
+				"padding",
+				"padding-top\tproperty"
+			],
+			[
+				"padd",
+				"padding-top\tproperty"
 			],
 			[
 				"z",
@@ -22,10 +50,6 @@
 			[
 				"center",
 				"center\ttext-align"
-			],
-			[
-				"padding",
-				"padding-left\tproperty"
 			],
 			[
 				"font-s",
@@ -38,10 +62,6 @@
 			[
 				"op",
 				"opacity\tproperty"
-			],
-			[
-				"font",
-				"font-weight\tproperty"
 			],
 			[
 				"header",
@@ -494,67 +514,11 @@
 			[
 				"meta",
 				"meta_description\t(application.html.erb)"
-			],
-			[
-				"img",
-				"img-responsive\t(index.html.erb)"
-			],
-			[
-				"emai",
-				"email-links\t(hospitals.html.erb)"
-			],
-			[
-				"margin-",
-				"margin-bottom"
-			],
-			[
-				"margin",
-				"margin-right"
-			],
-			[
-				"card",
-				"card-body\t(index.html.erb)"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "_includes/footer.html",
-			"settings":
-			{
-				"buffer_size": 282,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/main.css",
-			"settings":
-			{
-				"buffer_size": 3958,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_layouts/default.html",
-			"settings":
-			{
-				"buffer_size": 4509,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_includes/header.html",
-			"settings":
-			{
-				"buffer_size": 233,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -629,13 +593,23 @@
 	},
 	"file_history":
 	[
-		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/nav-links.html",
-		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/head.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/css/main.css",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/gallery/index.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/index.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/css-tut.sublime-project",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/social-list.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_layouts/default.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/footer.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/test.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_layouts/cont.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_layouts/test.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/head.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_layouts/head.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_site/index.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/header.html",
+		"/Users/vanessaespiritosanto/Code/twikah.github.io/_includes/nav-links.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/css/reset.css",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/css/second.css",
-		"/Users/vanessaespiritosanto/Code/twikah.github.io/css-tut.sublime-project",
-		"/Users/vanessaespiritosanto/Code/twikah.github.io/_layouts/test.html",
 		"/Users/vanessaespiritosanto/Code/twikah.github.io/tested.html",
 		"/Users/vanessaespiritosanto/Code/vanessaesanto/app/helpers/application_helper.rb",
 		"/Users/vanessaespiritosanto/Code/vanessaesanto/config/application.rb",
@@ -746,17 +720,7 @@
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/controllers/static_pages_controller.rb",
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/mls.sublime-project",
 		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/static_pages/supplies_sales.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/static_pages/insurance_sales.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/static_pages/homedr_services.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/doctors/create.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/controllers/application_controller.rb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/new_doctor_mailer/signup.html.erb",
-		"/Users/vanessaespiritosanto/Code/twikah.github.com/index.html",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/test/mailers/new_doctor_mailer_test.rb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/controllers/referrals_controller.rb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/test/controllers/sessions_controller_test.rb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/sessions/destroy.html.erb",
-		"/Users/vanessaespiritosanto/Code/MLS/MLS/config/initializers/non_digest_assets.rb"
+		"/Users/vanessaespiritosanto/Code/MLS/MLS/app/views/static_pages/insurance_sales.html.erb"
 	],
 	"find":
 	{
@@ -792,131 +756,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "_includes/footer.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								281,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3958,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3923,
-								3904
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2837.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_layouts/default.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4482,
-								4482
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 149.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_includes/header.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 233,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								232,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
