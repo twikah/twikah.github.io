@@ -661,6 +661,20 @@ p {
   .header-nav li:first-child a {
     color: #fff;
   }
+  .mobile-menu-check:checked ~ .header-nav {
+    max-height: 1000px;
+  }
+  .mobile-menu-check:checked ~ .show-mobile-menu:after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 1.5em;
+    width: 100%; 
+  }
+
   /* HIDE DROPDOWN IN THE NAV MENU */
   .header-nav .dropdown:hover .drop-menu,
   .header-nav .drop-trigger:after {
