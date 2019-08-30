@@ -1,0 +1,4 @@
+---
+tag: remote
+permalink: "/remote"
+---

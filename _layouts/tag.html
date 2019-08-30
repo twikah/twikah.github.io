@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="page">
+  <h3 class="category-tag-header">{{ page.tag }}</h3>
+  {% for post in site.tags[page.tag] %}
+    {% include post-excerpt.html %}
+  {% endfor %}
+</div>
+

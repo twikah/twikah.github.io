@@ -1,0 +1,101 @@
+---
+postHero: /images/remote-1.png
+title: Remote! Remote! Remote!
+categories: work
+tags: [remote, productivity]
+---
+
+My plan is to go remote. I'd love to find a team of awesome people that develop a great product and work remotely in customer support, all the while mastering programming skills.
+
+I don't know if this dream will ever come true but to make it happen I need to go ahead and start doing something. This blog is my starting point for that. I'm also reading about what it takes to be an exceptional remote worker and about the hazards of the game. When looking for insights on these matters I found Jason Lengstorft and his [site](http://lengstorf.com). He managed to turn from unhealthy workaholic to achieving his dream of happily working while permanently travelling the world.
+
+<img class="pull-left" src="/images/remote-1.png" alt="computer and coffee">
+
+So I went and explored his [site](http://lengstorf.com) and found some guides on how to go remote and how to perform well in a remote environment. Jason generously posts lots of useful information on the subject but, for now, I will mention only three of his guides and I'll add a summary of his ideas. Let me be clear: his ideas! I'm just an apprentice 😌.
+
+The guides I've read are:
+  <ul class="post-ul fa-ul">
+    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/about/">3 Blindingly Obvious (and Therefore Painfully Underappreciated) Daily Actions That Will Change Your Life - Starting Today</a></li>
+    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/remote-work-course/">How to Go Remote A 6-STEP CHECKLIST</a></li>
+    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/productivity-habits/">5 Habits of the Unfuckwithably Productive</a></li>
+</ul>
+
+My shrine of remembrance 🤓:
+
+On the 3 daily actions to improve myself as a person and in my work:
+
+<ul class="post-ul fa-ul">
+  <li><i class="fa-li fa fa-bookmark"></i>Make lists!
+    <p>
+      Writing things down will turn your tasks easier to prioritize and it reduces the stress of having many things to do. Jason recommends a day-to-day list with few tasks to accomplish daily and a master list for your projects in the long run.
+    </p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>Sleep.
+    <p>
+      It helps if you move away from all your devices 1 hour prior to bedtime so you'll have time to decompress.
+    </p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>Put your phone down.
+    <p>
+      Disconnect! People look like robots, plugged on their phones at all times. I witness this every day on my advertising part-time. At home we never check our phones during meals, it improves the time we spend together.
+    </p>
+  </li>
+</ul>
+
+Now, regarding the fabulous 6-STEP CHECKLIST on how to go remote:
+
+<ul class="post-ul fa-ul">
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 1: Communication as a default
+    <p>Do constant updates on your daily list achievements and on your projects. Also, share what you're planning on until the next update. This way everybody is on the same page and it's easier to spot potential problems. Communication builds reliability.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 2: Only make promises you can keep
+    <p>Again, you have to show you're reliable. If you don't share the same space as the team then it's harder for them to get to know you, so learning to commit to goals according to your limits will make people trust you.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 3: Measure by results, not hours
+    <p>Remote work implies autonomy and control over your schedule. Define measurable results for projects and performance reviews that are based on what you produce, now how much time you spend.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 4: Master the Art of being productive
+    <p>Efficiency is really important in remote work. High productivity means bargaining power: as Jason says, this way you'll be up to set terms and boundaries more easily.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 5: Fight the urge to slack
+    <p>Planning crystal clear on what is there to do and how to accomplish repels procrastination. Making lists is a key on this step.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Step 6: Make yourself noticed
+    <p>Making your presence known may be more difficult in a remote position. You do it by excel on your communication skills, by  being efficient and reliable. This way your team will know what they can count on and you will have a say. Jason mentioned the halo effect (where people see your positive attributes as proof of other positive attributes) and the Pygmalion effect (where you represent yourself as capable, which causes people to expect you to be capable, which causes you to become capable).</p>
+  </li>
+</ul>
+
+Last but not least, the list of 5 habits to master productivity:
+
+<ul class="post-ul fa-ul">
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Habit 1: gain willpower
+    <p>Again, making lists every day, make them clear and feasible. Start your day with the meaningful and bigger tasks and you'll feel great that you accomplished something big.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Habit 2: Use triggers to improve your routine
+    <p>Do not waste your time between tasks, use them in your favour. Create habit triggers that will cause you to be more productive. For example, today I deleted a game from my phone because it was messing with my commute time (not only commute time!). I like to use my commute time to read articles or listen to a podcast, which are self-improving tasks. The last few days there was no room for any of that, only for Tap Tap Fish. I couldn't help myself so I went drastic on it and deleted the game. The goal is to not think on what you have to do but it coming to you naturally instead.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Habit 3: Distance yourself from work at times
+    <p>You need to take breaks from your work. If you're always wired to it you'll lose excitement. Some time off lessens your stress levels, freshens your mind and enhances productivity.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Habit 4: Positive pressure and efficiency
+    <p>Productivity can increase by setting little goals. You can use a timer to work in timed blocks; I've heard about "The Pomodoro Technique" as well. During these blocks of time we won't have distractions - no email, no chats, no social media. If you set the time and define one mission for that block, you'll be much more productive because you'll want to have finished that task faster.</p>
+  </li>
+  <li><i class="fa-li fa fa-bookmark"></i>
+    Habit 5: Stay focused
+    <p>You can use tools like silence, airplane or do-not-disturb modes when working. Getting noise cancelling headphones is a plus and Jason also recommends <a href="https://www.noisli.com/">Noisli</a> when he's on work blocks. Tools like <a href="https://www.rescuetime.com/">RescueTime</a> monitors the time you spend on your computer and assesses your productivity.</p>
+  </li>
+</ul>
+
+<img class="pull-right" src="/images/remote-2.png" alt="computer and camera">
+
+Disclaimer: My summary is only my view on what's most important for me from Jason's guides. You should still read them all and visit his site. These are just my notes so I can rely on them whenever I want.
