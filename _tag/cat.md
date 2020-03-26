@@ -1,0 +1,4 @@
+---
+tag: cat
+permalink: "/cat"
+---

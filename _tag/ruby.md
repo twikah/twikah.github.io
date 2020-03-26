@@ -1,0 +1,4 @@
+---
+tag: ruby
+permalink: "/ruby"
+---

@@ -444,6 +444,9 @@ blockquote::before{
   float: right;
   margin: 1em -1% 1em 1em;
 }
+.center-img {
+  width: 100%;
+}
 .post-aside {
   background-color: rgba(0, 0, 0, 0.01);
   float: right;
