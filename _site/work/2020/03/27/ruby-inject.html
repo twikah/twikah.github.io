@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <title>Ruby: inject | Vanessa's blog</title>
+  
+  
+    <meta name="description" content="Vanessa Espirito Santo's blog.">
+  
+  <link href="/favicon.png" rel="icon">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/9351bfa4c2.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Alice|Open+Sans|Raleway:100" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+  <body>
+    <header class="header">
+  <nav>
+    <input type="checkbox" id="mobile-menu" class="mobile-menu-check">
+    <label for="mobile-menu" class="show-mobile-menu">Menu</label>
+    <ul class="header-nav nav-links">
+      <li><a href="https://vanessaesanto.com">WEBFOLIO</a></li>
+<li class="dropdown">
+  <a class="drop-trigger" href="/">Blog</a>
+  <ul class="drop-menu">
+    <li>Recent Posts</li>
+    
+      <li><a href="/work/2020/03/27/ruby-inject.html">Ruby: inject</a></li>
+    
+      <li><a href="/work/2020/03/26/rails-images-heroku.html">Rails, images and Heroku</a></li>
+    
+      <li><a href="/personal/work/2020/03/25/post-wagon.html">Post Wagon</a></li>
+    
+      <li><a href="/personal/2019/12/11/le-wagon-bootcamp.html">Le Wagon bootcamp</a></li>
+    
+      <li><a href="/personal/2019/08/12/baby-cat.html">Baby cat!</a></li>
+    
+  </ul>
+</li>
+<li><a href="/work/2020/03/27/ruby-inject.html">Newest Post</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="logo-wrapper">
+    <a href="https://vanessaesanto.com" class="header-logo">
+      <img src="/images/logo-2.svg" alt="VES-logo">
+    </a>
+    <a href="/">
+      <h1 class="logo-name">vanessa's blog</h1>
+    </a>
+  </div>
+</header>
+
+
+    <div class="content-container">
+      <div class="post">
+  <article class="page">
+    <header class="post-header">
+      <h1>Ruby: inject</h1>
+      <div class="post-byline">
+        <img src="https://s.gravatar.com/avatar/4a92996328d78a1115709b690d8df067?s=150">
+        by
+        <a href="https:vanessaesanto.com">
+          Vanessa
+        </a>
+        <span> - March 27, 2020</span>
+      </div>
+    </header>
+    <aside class="post-aside">
+      <h4>Categories</h4>
+        <ul class="categories-tags-list">
+          
+          
+            <li class="post-category-tag">
+              <a href="/category/personal">
+                personal
+                <span>(5)</span>
+              </a>
+            </li>
+          
+            <li class="post-category-tag">
+              <a href="/category/work">
+                work
+                <span>(8)</span>
+              </a>
+            </li>
+          
+        </ul>
+      <h4>Tags</h4>
+      <ul class="categories-tags-list">
+        
+        
+          <li class="post-category-tag">
+            <a href="/asset-pipeline">
+              asset-pipeline
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/cat">
+              cat
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/heroku">
+              heroku
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/life-changes">
+              life-changes
+              <span>(3)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/marketing">
+              marketing
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/personal-development">
+              personal-development
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/productivity">
+              productivity
+              <span>(2)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/remote">
+              remote
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/ruby">
+              ruby
+              <span>(4)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/ruby-methods">
+              ruby-methods
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/web-development">
+              web-development
+              <span>(6)</span>
+            </a>
+          </li>
+        
+      </ul>
+    </aside>
+    <div class="post-content">
+      <p>Last week I did a code challenge about an IP address converter.</p>
+
+<p>My method had 19 lines, but it worked. Out of curiosity, I looked into other
+solutions to see how I could simplify or improve my response.</p>
+
+<p>That was when I found a resopnse… With just 1 line of code 😱😱🤯</p>
+
+<p><img class="pull-left" src="https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif" alt="mindblown animation" style="width: 200px;" /></p>
+
+<p>This solution that I found used the <code class="highlighter-rouge">inject</code> method. I tried to understand
+it but it was a bit confusing.</p>
+
+<p>So I googled for inject examples. I
+found <a href="http://blog.jayfields.com/2008/03/ruby-inject.html">this</a> incredible
+article about <code class="highlighter-rouge">Enumerable#inject</code> and now I want to write down what I
+learned from it… You know, for future reference.</p>
+
+<p><br /></p>
+
+<h3 id="example-1-we-have-an-array-of-numbers-and-we-want-the-sum-of-those-numbers">Example 1: We have an array of numbers and we want the sum of those numbers</h3>
+
+<p><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject(0) { |result, element| result + element } # =&gt; 10
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>The inject method takes an <em>argument</em> and a <em>block</em>.</p>
+
+<p>In the example above, inject is being called on the array [1, 2, 3, 4] and it
+takes the integer <em>0</em> as the <em>argument</em>.</p>
+
+<p>Then, our <em>block</em> has its own arguments inside it, <em>result and element</em>.</p>
+
+<p>The block will be executed once for each element contained in the array [1,2,3,4].</p>
+
+<p>The first time the block executes, the argument 0 will be yielded as the result
+argument of the block. Then, the first element of the array - 1 - will
+be yielded to the element argument of the block.</p>
+
+<p>Our block will be executed 4 times, once for every element of our array
+[1,2,3,4]. So, to recap, the first time the block executes, the result argument
+will become 0 and the element argument will become 1.</p>
+
+<p>The return value of the block will be yielded as the result argument the next
+time the block is executed. So, in the first execution, the return value of the
+block will be 0 + 1 = 1. Then, 1 will be yielded as the result argument in the
+second time the block is executed.</p>
+
+<p>The second time the block is executed, the result argument on the block becomes
+1 and the element argument becomes 2 (the second element of the array).
+Here, the result, 1, and the element, 2 will be added together, and the second
+execution of the block returns 3 as result value.</p>
+
+<p>The above line of thought will be repeated for third and fourth elements of our
+example array, and the return value of this inject method will be 10.</p>
+
+<p><br /></p>
+
+<p>We should know that the argument to inject is optional:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject { |result, element| result + element } # =&gt; 10
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>The argument acts as a default value to be passed on the first time the code
+executes. If we don’t have an argument, the block yields the first element of
+the array - 1 - to become the result argument of the block and the second
+element of the array to become the element argument of the block.</p>
+
+<p>In this case the block will only need to be executed 3 times, since the first
+execution will yield both the first and the second element.</p>
+
+<p><br /></p>
+
+<h3 id="example-2-we-have-an-array-of-arrays-and-we-want-to-convert-it-into-a-hash">Example 2: We have an array of arrays and we want to convert it into a hash</h3>
+
+<p><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[:first_name, 'harvey'], [:last_name, 'specter']].inject({}) do |result, element|
+  result[element.first] = element.last.upcase
+  result
+end
+
+# =&gt; {:first_name=&gt;"Harvey", :last_name=&gt;"Specter"}
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>On example 2, we have an empty hash passed as an argument to inject.</p>
+
+<p>The block iterates through each element in the array, adding the key and value
+one at a time to the result. Also, since the result of the block is the next
+yielded result, we need to explicitly return the result on the following line.</p>
+
+<p><br /></p>
+
+<h3 id="example-3-we-have-an-array-and-want-to-select-integers-that-are-even-as-strings">Example 3: We have an array and want to select integers that are even, as strings</h3>
+
+<p><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].select { |element| element % 2 == 0 }.collect do |element|
+  element.to_s
+end
+
+# =&gt; ["2", "4", "6"]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>The chained enumerables above can be replaced by the inject method below, making
+the code more readable:</p>
+
+<p><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].inject([]) do |result, element|
+  result &lt;&lt; element.to_s if element % 2 == 0
+  result
+end
+
+# =&gt; ["2", "4", "6"]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="all-in-all-inject-allows-us-to-easily-convert-an-enumerable-into-an-object-and-manipulate-it-on-the-fly-making-our-code-more-concise">All in all, inject allows us to easily convert an enumerable into an object and manipulate it on the fly, making our code more concise.</h4>
+
+
+    </div>
+    <footer class="post-footer">
+      <div></div>
+      <div>categories:
+        
+        
+          <a href="/category/work">work</a>
+        
+      </div>
+      <div>tags:
+        
+        
+          <a href="/ruby">ruby</a>
+        
+          <a href="/ruby-methods">ruby-methods</a>
+        
+          <a href="/web-development">web-development</a>
+        
+      </div>
+    </footer>
+  </article>
+</div>
+
+    </div>
+
+    <footer class="footer">
+  <ul>
+    <li>
+      <a href="mailto: vanessaesanto@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/vanessaes" target="_blank" class="social-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/twikah" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/define_vanessa" target="_blank" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+
+  <h3>
+    Crafted with <i class="fa fa-heart" aria-hidden="true"></i>
+    by <a href="http://twikah.rocks/" target="_blank">twikah</a>
+  </h3>
+
+</footer>
+
+
+
+
+  </body>
+</html>
