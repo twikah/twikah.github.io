@@ -1,0 +1,57 @@
+I"v	<p>Having finished the bootcamp and while looking for a new junior web dev job, I’m
+keeping myself busy with code challenges and a pet project.</p>
+
+<p><img class="pull-left" src="/images/heroku-meme-asset-pipeline.jpg" alt="Heroku meme" style="width: 170px;" /></p>
+
+<p>I recently came across an issue when I added an image in my stylesheet (scss) as
+a background-image from a relative path, indicating a file in my
+/app/assets/images directory.</p>
+
+<p>The below 👇 worked out fine on my localhost:</p>
+
+<p><br /></p>
+
+<div>
+
+```css
+.callout {
+  background-image: url("footer-callout.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+```
+
+</div>
+
+<p><br /></p>
+
+<p>This was until I deployed and then my image disappeared. It took me some time
+to figure out how to get the image to display in Heroku. For an image located in
+/app/assets/images/footer-callout.jpg, assuming that it is a CSS background
+image, you want to reference it as</p>
+
+<p><br /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.callout</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="n">asset-url</span><span class="p">(</span><span class="s1">"footer-callout.jpg"</span><span class="p">);</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>I looked up the above on <a href="https://guides.rubyonrails.org/asset_pipeline.html#css-and-sass">Rails guides</a>.
+I’m just posting it here to have a clearer example and also for future reference.
+Maybe this helps someone else in the future!</p>
+
+<p>I recently also heard from a friend and fellow Le Wagon alumni that we should
+replace any images with the <code class="highlighter-rouge">.jpeg</code> extension with <code class="highlighter-rouge">.jpg</code> as Heroku
+won’t display the former.</p>
+
+<p>What can I take from this? Deploying to Heroku can be tricky, so do it as often
+as possible. This way, any issues will be sorted more easily.</p>
+
+:ET

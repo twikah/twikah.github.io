@@ -47,10 +47,11 @@ a img {
   border: none;
 }
 code {
-  background-color: #eee;
-  border-radius: 3px;
-  font-family: courier, monospace;
-  padding: 0 3px;
+  background-color: rgba(70,106,112, 0.1);
+  border-radius: 5px;
+  font-family: monospace;
+  padding: 5px;
+  display: inline-block;
 }
 
 /* GLOBAL STYLES */

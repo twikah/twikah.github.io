@@ -26,10 +26,10 @@ mention only three of his guides and I'll add a summary of his ideas. Let me be
 clear: his ideas! I'm just an apprentice 😌.
 
 The guides I've read are:
-  <ul class="post-ul fa-ul">
-    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/about/">3 Blindingly Obvious (and Therefore Painfully Underappreciated) Daily Actions That Will Change Your Life - Starting Today</a></li>
-    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/remote-work-course/">How to Go Remote A 6-STEP CHECKLIST</a></li>
-    <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/productivity-habits/">5 Habits of the Unfuckwithably Productive</a></li>
+<ul class="post-ul fa-ul">
+  <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/about/">3 Blindingly Obvious (and Therefore Painfully Underappreciated) Daily Actions That Will Change Your Life - Starting Today</a></li>
+  <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/remote-work-course/">How to Go Remote A 6-STEP CHECKLIST</a></li>
+  <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://lengstorf.com/productivity-habits/">5 Habits of the Unfuckwithably Productive</a></li>
 </ul>
 
 My shrine of remembrance 🤓:

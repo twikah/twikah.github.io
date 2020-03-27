@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <title>Rails, images and Heroku | Vanessa's blog</title>
+  
+  
+    <meta name="description" content="Vanessa Espirito Santo's blog.">
+  
+  <link href="/favicon.png" rel="icon">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/9351bfa4c2.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Alice|Open+Sans|Raleway:100" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+  <body>
+    <header class="header">
+  <nav>
+    <input type="checkbox" id="mobile-menu" class="mobile-menu-check">
+    <label for="mobile-menu" class="show-mobile-menu">Menu</label>
+    <ul class="header-nav nav-links">
+      <li><a href="https://vanessaesanto.com">WEBFOLIO</a></li>
+<li class="dropdown">
+  <a class="drop-trigger" href="/">Blog</a>
+  <ul class="drop-menu">
+    <li>Recent Posts</li>
+    
+      <li><a href="/work/2020/03/26/rails-images-heroku.html">Rails, images and Heroku</a></li>
+    
+      <li><a href="/personal/work/2020/03/25/post-wagon.html">Post Wagon</a></li>
+    
+      <li><a href="/personal/2019/12/11/le-wagon-bootcamp.html">Le Wagon bootcamp</a></li>
+    
+      <li><a href="/personal/2019/08/12/baby-cat.html">Baby cat!</a></li>
+    
+      <li><a href="/personal/2019/01/21/new-beginnings.html">New beginnings</a></li>
+    
+  </ul>
+</li>
+<li><a href="/work/2020/03/26/rails-images-heroku.html">Newest Post</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="logo-wrapper">
+    <a href="https://vanessaesanto.com" class="header-logo">
+      <img src="/images/logo-2.svg" alt="VES-logo">
+    </a>
+    <a href="/">
+      <h1 class="logo-name">vanessa's blog</h1>
+    </a>
+  </div>
+</header>
+
+
+    <div class="content-container">
+      <div class="post">
+  <article class="page">
+    <header class="post-header">
+      <h1>Rails, images and Heroku</h1>
+      <div class="post-byline">
+        <img src="https://s.gravatar.com/avatar/4a92996328d78a1115709b690d8df067?s=150">
+        by
+        <a href="https:vanessaesanto.com">
+          Vanessa
+        </a>
+        <span> - March 26, 2020</span>
+      </div>
+    </header>
+    <aside class="post-aside">
+      <h4>Categories</h4>
+        <ul class="categories-tags-list">
+          
+          
+            <li class="post-category-tag">
+              <a href="/category/personal">
+                personal
+                <span>(5)</span>
+              </a>
+            </li>
+          
+            <li class="post-category-tag">
+              <a href="/category/work">
+                work
+                <span>(7)</span>
+              </a>
+            </li>
+          
+        </ul>
+      <h4>Tags</h4>
+      <ul class="categories-tags-list">
+        
+        
+          <li class="post-category-tag">
+            <a href="/asset-pipeline">
+              asset-pipeline
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/cat">
+              cat
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/heroku">
+              heroku
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/life-changes">
+              life-changes
+              <span>(3)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/marketing">
+              marketing
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/personal-development">
+              personal-development
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/productivity">
+              productivity
+              <span>(2)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/remote">
+              remote
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/ruby">
+              ruby
+              <span>(3)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/web-development">
+              web-development
+              <span>(5)</span>
+            </a>
+          </li>
+        
+      </ul>
+    </aside>
+    <div class="post-content">
+      <p>Having finished the bootcamp and while looking for a new junior web dev job, I’m
+keeping myself busy with code challenges and a pet project.</p>
+
+<p><img class="pull-left" src="/images/heroku-meme-asset-pipeline.jpg" alt="Heroku meme" style="width: 170px;" /></p>
+
+<p>I recently came across an issue when I added an image in my stylesheet (scss).</p>
+
+<p>I added a background-image with a relative path, indicating a file in my
+/app/assets/images directory.</p>
+
+<p>This was good and well, until I deployed and then my image disappeared!</p>
+
+<p><br /></p>
+
+<p>The below 👇 worked out fine on my localhost but NOT on Heroku:</p>
+
+<p><br /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.callout</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("footer-callout.jpg")</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>It took me some time to figure out how to get the image to display in production.
+For an image located in /app/assets/images/footer-callout.jpg, assuming that it
+is a CSS background image, you want to reference it as:</p>
+
+<p><br /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.callout</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="n">asset-url</span><span class="p">(</span><span class="s1">"footer-callout.jpg"</span><span class="p">);</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>I looked this up on <a href="https://guides.rubyonrails.org/asset_pipeline.html#css-and-sass">Rails guides</a>.
+I’m just posting it here to have a clearer example and also for future reference.
+And who knows, maybe this helps someone else!</p>
+
+<p>I recently also heard from a friend and fellow Le Wagon alumni that we should
+replace any images with the <code class="highlighter-rouge">.jpeg</code> extension with <code class="highlighter-rouge">.jpg</code> as Heroku
+won’t display the former.</p>
+
+<p><br /></p>
+
+<p>What can I take from this? Deploying to Heroku can be tricky, so do it as often
+as possible. This way, any issues will be sorted more easily.</p>
+
+
+    </div>
+    <footer class="post-footer">
+      <div></div>
+      <div>categories:
+        
+        
+          <a href="/category/work">work</a>
+        
+      </div>
+      <div>tags:
+        
+        
+          <a href="/asset-pipeline">asset-pipeline</a>
+        
+          <a href="/heroku">heroku</a>
+        
+          <a href="/ruby">ruby</a>
+        
+          <a href="/web-development">web-development</a>
+        
+      </div>
+    </footer>
+  </article>
+</div>
+
+    </div>
+
+    <footer class="footer">
+  <ul>
+    <li>
+      <a href="mailto: vanessaesanto@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/vanessaes" target="_blank" class="social-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/twikah" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/define_vanessa" target="_blank" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+
+  <h3>
+    Crafted with <i class="fa fa-heart" aria-hidden="true"></i>
+    by <a href="http://twikah.rocks/" target="_blank">twikah</a>
+  </h3>
+
+</footer>
+
+
+
+
+  </body>
+</html>

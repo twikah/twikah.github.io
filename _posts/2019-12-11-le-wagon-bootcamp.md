@@ -23,7 +23,7 @@ All these bootcamps have good reputation and good reviews from students.
 
 Le Wagon offered, in my opinion, the most complete curriculum and was aligned
 with my interest in learning Ruby. The cost and the length of the bootcamp were
-also appealing. Le Wagon was the chosen one!
+also appealing. [Le Wagon](https://www.lewagon.com/) was the chosen one!
 
 I am now doing the prep work and will start on Jan 13th. Wish me luck!
 
