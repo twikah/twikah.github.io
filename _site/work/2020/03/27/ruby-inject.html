@@ -28,6 +28,8 @@
   <ul class="drop-menu">
     <li>Recent Posts</li>
     
+      <li><a href="/work/2020/05/31/journey-through-outsystems.html">Journey Through OutSystems</a></li>
+    
       <li><a href="/work/2020/03/27/ruby-inject.html">Ruby: inject</a></li>
     
       <li><a href="/work/2020/03/26/rails-images-heroku.html">Rails, images and Heroku</a></li>
@@ -36,11 +38,9 @@
     
       <li><a href="/personal/2019/12/11/le-wagon-bootcamp.html">Le Wagon bootcamp</a></li>
     
-      <li><a href="/personal/2019/08/12/baby-cat.html">Baby cat!</a></li>
-    
   </ul>
 </li>
-<li><a href="/work/2020/03/27/ruby-inject.html">Newest Post</a></li>
+<li><a href="/work/2020/05/31/journey-through-outsystems.html">Newest Post</a></li>
 
     </ul>
   </nav>
@@ -85,7 +85,7 @@
             <li class="post-category-tag">
               <a href="/category/work">
                 work
-                <span>(8)</span>
+                <span>(9)</span>
               </a>
             </li>
           
@@ -130,6 +130,13 @@
           </li>
         
           <li class="post-category-tag">
+            <a href="/outsystems">
+              outsystems
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
             <a href="/personal-development">
               personal-development
               <span>(1)</span>
@@ -167,7 +174,7 @@
           <li class="post-category-tag">
             <a href="/web-development">
               web-development
-              <span>(6)</span>
+              <span>(7)</span>
             </a>
           </li>
         
@@ -183,12 +190,12 @@ solutions to see how I could simplify or improve my response.</p>
 
 <p><img class="pull-left" src="https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif" alt="mindblown animation" style="width: 200px;" /></p>
 
-<p>This solution that I found used the <code class="highlighter-rouge">inject</code> method. I tried to understand
+<p>This solution that I found used the <code class="language-plaintext highlighter-rouge">inject</code> method. I tried to understand
 it but it was a bit confusing.</p>
 
 <p>So I googled for inject examples. I
 found <a href="http://blog.jayfields.com/2008/03/ruby-inject.html">this</a> incredible
-article about <code class="highlighter-rouge">Enumerable#inject</code> and now I want to write down what I
+article about <code class="language-plaintext highlighter-rouge">Enumerable#inject</code> and now I want to write down what I
 learned from it… You know, for future reference.</p>
 
 <p><br /></p>
@@ -197,7 +204,7 @@ learned from it… You know, for future reference.</p>
 
 <p><br /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject(0) { |result, element| result + element } # =&gt; 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject(0) { |result, element| result + element } # =&gt; 10
 </code></pre></div></div>
 
 <p><br /></p>
@@ -236,7 +243,7 @@ example array, and the return value of this inject method will be 10.</p>
 
 <p>We should know that the argument to inject is optional:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject { |result, element| result + element } # =&gt; 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4].inject { |result, element| result + element } # =&gt; 10
 </code></pre></div></div>
 
 <p><br /></p>
@@ -255,7 +262,7 @@ execution will yield both the first and the second element.</p>
 
 <p><br /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[:first_name, 'harvey'], [:last_name, 'specter']].inject({}) do |result, element|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[:first_name, 'harvey'], [:last_name, 'specter']].inject({}) do |result, element|
   result[element.first] = element.last.upcase
   result
 end
@@ -277,7 +284,7 @@ yielded result, we need to explicitly return the result on the following line.</
 
 <p><br /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].select { |element| element % 2 == 0 }.collect do |element|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].select { |element| element % 2 == 0 }.collect do |element|
   element.to_s
 end
 
@@ -291,7 +298,7 @@ the code more readable:</p>
 
 <p><br /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].inject([]) do |result, element|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5, 6].inject([]) do |result, element|
   result &lt;&lt; element.to_s if element % 2 == 0
   result
 end

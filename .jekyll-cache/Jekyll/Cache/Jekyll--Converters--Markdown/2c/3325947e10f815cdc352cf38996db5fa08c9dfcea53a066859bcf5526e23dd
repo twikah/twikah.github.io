@@ -1,4 +1,4 @@
-I"�<p>Having finished the bootcamp and while looking for a new junior web dev job, I’m
+I"<p>Having finished the bootcamp and while looking for a new junior web dev job, I’m
 keeping myself busy with code challenges and a pet project.</p>
 
 <p><img class="pull-left" src="/images/heroku-meme-asset-pipeline.jpg" alt="Heroku meme" style="width: 170px;" /></p>
@@ -47,7 +47,7 @@ I’m just posting it here to have a clearer example and also for future referen
 And who knows, maybe this helps someone else!</p>
 
 <p>I recently also heard from a friend and fellow Le Wagon alumni that we should
-replace any images with the <code class="highlighter-rouge">.jpeg</code> extension with <code class="highlighter-rouge">.jpg</code> as Heroku
+replace any images with the <code class="language-plaintext highlighter-rouge">.jpeg</code> extension with <code class="language-plaintext highlighter-rouge">.jpg</code> as Heroku
 won’t display the former.</p>
 
 <p><br /></p>
