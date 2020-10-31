@@ -2,10 +2,13 @@
 postHero: /images/outsystems-model.png
 title: 'Restoring OutSystems apps from a recycled personal environment'
 categories: work
-tags: [web-development, outsystems]
+tags: [web-development, outsystems, service-studio]
 ---
 
 It's been a while since I last used my OutSystems personal environment.
+
+<img class="pull-left" src="/images/outsystems-model.png"
+alt="service studio">
 
 I knew that, after a certain period of inactivity, OutSystems would recycle my
 environment. You get some emails alerting you to this and then, if you do not
