@@ -432,6 +432,12 @@ blockquote::before{
 .post-content img {
   width: 24em;
 }
+.post-content .img-medium {
+  width: 16em;
+}
+.post-content .img-large {
+  width: 100%;
+}
 .post-content,
 .post-footer {
   max-width: 40em;
@@ -447,6 +453,8 @@ blockquote::before{
 }
 .center-img {
   width: 100%;
+  text-align: center;
+  margin: auto;
 }
 .post-aside {
   background-color: rgba(0, 0, 0, 0.01);
