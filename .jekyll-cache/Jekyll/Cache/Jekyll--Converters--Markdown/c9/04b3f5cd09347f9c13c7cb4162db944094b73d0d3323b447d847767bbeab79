@@ -1,0 +1,91 @@
+I"<p>This is the Part 2 of a how-to guide on how to implement the OutSystems’
+built-in Date Picker widget and override some undesired behaviour on the way.</p>
+
+<p><br /></p>
+
+<p>On <a href="https://twikah.github.io/work/2021/01/19/outsystems-datepicker-pt1.html">Part 1</a>
+of this guide, I handled the Date Picker set up and fixed an issue with its
+date format. Now, I’ll show you how I sorted the issues of:</p>
+
+<p>     - Being able to write on an Input bound to a Date Picker
+<strong>(point 2 from Part 1)</strong>, and;</p>
+
+<p>     - How to remove a date from a Date Picker
+<strong>(point 3 from Part 1)</strong>;</p>
+
+<p><br /></p>
+
+<p>To tackle these points, I added a snippet of javascript to the code. The idea is
+to add the JS snippet when the page is ready, to <strong>(point 2) prevent the user
+from typing on the Input widget</strong> and <strong>(point 3) to call a new action if the
+user clicks on delete</strong>. This new action <strong>forces the local variable to be
+assigned to a null date whenever the user clicks on delete</strong>.</p>
+
+<p><br /></p>
+
+<p>On the snippet below, I added a <strong>listener to each Date Picker and corresponding
+input container</strong> to call the action <em>DatePickerOnSelect_DeleteStart</em> or
+<em>DatePickerOnSelect_DeleteEnd</em> if the user clicked on the delete key (keyCode 46)
+and to also prevent the default behaviour on the Input widgets and thus
+preventing the user from typing anything on those inputs.</p>
+
+<p><br /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="o">(</span><span class="s1">"#"</span> <span class="o">+</span> <span class="err">$</span><span class="nt">parameters</span><span class="nc">.StartContainerId</span> <span class="o">+</span>
+  <span class="s1">".DatePickerInput"</span><span class="o">)</span><span class="nc">.on</span><span class="o">(</span><span class="s1">"keydown"</span><span class="o">,</span> <span class="nt">function</span><span class="o">(</span><span class="nt">event</span><span class="o">)</span> <span class="p">{</span>
+    <span class="err">if</span> <span class="err">(event.keyCode</span> <span class="err">===</span> <span class="err">46</span> <span class="err">)</span> <span class="err">{</span>
+      <span class="err">$actions.DatePickerOnSelect_DeleteStart();</span>
+    <span class="p">}</span>
+    <span class="nt">event</span><span class="nc">.preventDefault</span><span class="o">();</span>
+<span class="err">}</span><span class="o">);</span>
+
+<span class="err">$</span><span class="o">(</span><span class="s1">"#"</span> <span class="o">+</span> <span class="err">$</span><span class="nt">parameters</span><span class="nc">.EndContainerId</span> <span class="o">+</span>
+  <span class="s1">".DatePickerInput"</span><span class="o">)</span><span class="nc">.on</span><span class="o">(</span><span class="s1">"keydown"</span><span class="o">,</span> <span class="nt">function</span><span class="o">(</span><span class="nt">event</span><span class="o">)</span> <span class="p">{</span>
+    <span class="err">if</span> <span class="err">(event.keyCode</span> <span class="err">===</span> <span class="err">46</span> <span class="err">)</span> <span class="err">{</span>
+      <span class="err">$actions.DatePickerOnSelect_DeleteEnd();</span>
+    <span class="p">}</span>
+    <span class="nt">event</span><span class="nc">.preventDefault</span><span class="o">();</span>
+<span class="err">}</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-4.png" alt="Getting any existing DB values with On After Fetch action" />
+</div>
+<p><br /></p>
+
+<p>     5. I added the desired <strong>date format</strong> to the Date
+Picker’s DateFormat property;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-5.png" alt="Setting the Date Picker’s date format" />
+</div>
+<p><br /></p>
+
+<p>     6. I set the OnSelect handler of the Date Pickers to
+their corresponding actions. Each picker has its own handler action - 
+<em>OnSelectDate_StartDate</em> and <em>OnSelectDate_EndDate</em>;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-6.png" alt="Setting the Date Picker’s OnSelect handlers" />
+</div>
+<p><br /></p>
+
+<p>     7. To be able to save the new selected dates, I added
+the following assign on my <em>CreateEditBooking</em> action:</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-7.png" alt="Saving the Date Picker’s dates" />
+</div>
+<p><br /></p>
+
+<p>And that’s how I sorted the issue with the date format.</p>
+
+<p>Check out Part 2 of this guide to see how I tackled points 2 and 3 from the list!</p>
+
+:ET

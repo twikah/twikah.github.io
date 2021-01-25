@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <title>OutSystems - Implementing the Date Picker widget in Mobile and Reactive apps (Part 1) | Vanessa's blog</title>
+  
+  
+    <meta name="description" content="Vanessa Espirito Santo's blog.">
+  
+  <link href="/favicon.png" rel="icon">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/9351bfa4c2.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Alice|Open+Sans|Raleway:100" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+  <body>
+    <header class="header">
+  <nav>
+    <input type="checkbox" id="mobile-menu" class="mobile-menu-check">
+    <label for="mobile-menu" class="show-mobile-menu">Menu</label>
+    <ul class="header-nav nav-links">
+      <li><a href="https://vanessaesanto.com">WEBFOLIO</a></li>
+<li class="dropdown">
+  <a class="drop-trigger" href="/">Blog</a>
+  <ul class="drop-menu">
+    <li>Recent Posts</li>
+    
+      <li><a href="/work/2021/01/21/outsystems-datepicker-pt2.html">OutSystems - Implementing the Date Picker widget in Mobile and Reactive apps (Part 2)</a></li>
+    
+      <li><a href="/work/2021/01/19/outsystems-datepicker-pt1.html">OutSystems - Implementing the Date Picker widget in Mobile and Reactive apps (Part 1)</a></li>
+    
+      <li><a href="/work/2020/10/31/restoring-outsystems-apps-from-a-recycled-personal-environment.html">Restoring OutSystems apps from a recycled personal environment</a></li>
+    
+      <li><a href="/work/2020/05/31/journey-through-outsystems.html">Journey Through OutSystems</a></li>
+    
+      <li><a href="/work/2020/03/27/ruby-inject.html">Ruby: inject</a></li>
+    
+  </ul>
+</li>
+<li><a href="/work/2021/01/21/outsystems-datepicker-pt2.html">Newest Post</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="logo-wrapper">
+    <a href="https://vanessaesanto.com" class="header-logo">
+      <img src="/images/logo-2.svg" alt="VES-logo">
+    </a>
+    <a href="/">
+      <h1 class="logo-name">vanessa's blog</h1>
+    </a>
+  </div>
+</header>
+
+
+    <div class="content-container">
+      <div class="post">
+  <article class="page">
+    <header class="post-header">
+      <h1>OutSystems - Implementing the Date Picker widget in Mobile and Reactive apps (Part 1)</h1>
+      <div class="post-byline">
+        <img src="https://s.gravatar.com/avatar/4a92996328d78a1115709b690d8df067?s=150">
+        by
+        <a href="https:vanessaesanto.com">
+          Vanessa
+        </a>
+        <span> - January 19, 2021</span>
+      </div>
+    </header>
+    <aside class="post-aside">
+      <h4>Categories</h4>
+        <ul class="categories-tags-list">
+          
+          
+            <li class="post-category-tag">
+              <a href="/category/personal">
+                personal
+                <span>(5)</span>
+              </a>
+            </li>
+          
+            <li class="post-category-tag">
+              <a href="/category/work">
+                work
+                <span>(12)</span>
+              </a>
+            </li>
+          
+        </ul>
+      <h4>Tags</h4>
+      <ul class="categories-tags-list">
+        
+        
+          <li class="post-category-tag">
+            <a href="/asset-pipeline">
+              asset-pipeline
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/cat">
+              cat
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/heroku">
+              heroku
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/life-changes">
+              life-changes
+              <span>(3)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/marketing">
+              marketing
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/outsystems">
+              outsystems
+              <span>(4)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/personal-development">
+              personal-development
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/productivity">
+              productivity
+              <span>(2)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/remote">
+              remote
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/ruby">
+              ruby
+              <span>(4)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/ruby-methods">
+              ruby-methods
+              <span>(1)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/service-studio">
+              service-studio
+              <span>(3)</span>
+            </a>
+          </li>
+        
+          <li class="post-category-tag">
+            <a href="/web-development">
+              web-development
+              <span>(10)</span>
+            </a>
+          </li>
+        
+      </ul>
+    </aside>
+    <div class="post-content">
+      <p>This is a how-to guide on how to implement the OutSystems’ built-in Date Picker
+widget and override some undesired behaviour on the way.</p>
+
+<p><br /></p>
+
+<p>I’m working on a project where, a while ago, I needed to identify all the
+existing Input widgets that had the data type set to “Date” to replace them with
+the OutSystems’ built-in Date Picker widget.</p>
+
+<p><br /></p>
+
+<p>Once I started implementing the new Date Picker widget, I faced some challenges:</p>
+
+<p>     1. I wanted to set the <strong>date format</strong> as “DD/MM/YYYY”
+but the dates would show as “YYYY-MM-DD”;</p>
+
+<p>     2. The Date Picker is bound to an Input widget which
+shows the selected date. The Input widget <strong>allowed the user to write on it</strong>,
+whether it already had a date selected or not;</p>
+
+<p>     3. The Input widget mentioned above (which is inside a
+form) was <strong>not</strong> set to mandatory - meaning that I should be able to save a
+record without setting the date on it. From here, 3 scenarios emerged:</p>
+
+<p>         3.1. I didn’t select any date on
+the Date Picker and everything went well.</p>
+
+<p>         3.2. I selected a date on the
+Date Picker and then I hit delete to remove that date. Then, I saved the record
+and <strong>the date that I tried to delete was still persisted on the database</strong>.</p>
+
+<p>         3.3. Instead of directly hitting
+the delete key to remove the date, I selected the date with my mouse and hit
+delete afterwards. Then, I saved the record and this time I was able to save the
+record with a null date.</p>
+
+<p><br /></p>
+
+<p>I created a little video demonstrating the odd behaviour outlined in point 3
+above.</p>
+
+<p><br /></p>
+
+<div style="height: 0; padding-bottom: calc(56.25%); position:relative;
+width: 100%;">
+  <iframe allow="autoplay; gyroscope;" allowfullscreen="" height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/600cbb5f9e67890046d4914a" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%">
+  </iframe>
+</div>
+
+<p style="font-size: 12px; text-align: right;">
+  Content made on <a href="https://www.kapwing.com/videos/600cbb5f9e67890046d4914a" target="_blank" rel="noopener noreferrer">Kapwing</a>
+</p>
+
+<p><br /></p>
+
+<p>I searched the OutSystems documentation, the forums and the OutSystems UI Style
+Guide for solutions. This post acts as a <em>how-to guide</em> to set the Date Picker
+to behave in the best possible way.</p>
+
+<p><br /></p>
+
+<p>The guide will be lengthy so I’ll split it into 2 parts. Part 1 details how I
+set up the widget and sorted the date format issue. Part 2 will show what I did
+to overcome points 2 and 3 from the list above.</p>
+
+<p><br /></p>
+
+<p>I’ll be using a Reactive app to illustrate each step. The user story is <strong>I want
+my users to be able to book a vacation period</strong>. The following screenshots are
+from the screen <em>VacationCreation</em>, where there’s a form to accomplish my goal.</p>
+
+<p><br /></p>
+
+<p>Here’s what I did:</p>
+
+<p>     1. I created a local variable for each Date Picker on
+the screen. In my <em>VacationPlanner</em> app, I needed a <strong>Start Date input</strong> and
+<strong>End Date input</strong> to book my vacations. I named these local variables
+<em>PickedBookingStartDate</em> and <em>PickedBookingEndDate</em>. Both have the data type
+“Text”;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-medium" src="/images/os_datepicker-1.png" alt="Fig. 1. Setting up local variables" />
+  <figcaption class="figcaption">
+    Fig. 1. Setting up local variables
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     2. I set the variable property of the Inputs (to which
+the Date Pickers are bound) to the local variables created above. I changed
+their data type to “Text” as well;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-2.png" alt="Fig. 2. Assigning the local variable PickedBookingStartDate to the
+  Input’s variable property" />
+  <figcaption class="figcaption">
+    Fig. 2. Assigning the local variable PickedBookingStartDate to the Input’s
+    variable property
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     3. If the user is editing an existing vacation booking,
+I want to display any dates previously saved. For that, I needed to assign the
+variables created on step 1 to any existing date on my booking. I selected the
+aggregate <em>GetBookingbyId</em>  -  which is used to record and populate the fields
+on my screen  -  and added a <strong>new action to its On After Fetch event</strong>;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-medium" src="/images/os_datepicker-3.png" alt="Fig. 3. Adding an action to the GetBookingById’s On After Fetch event" />
+  <figcaption class="figcaption">
+    Fig. 3. Adding an action to the GetBookingById’s On After Fetch event
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     4. On my action <em>GetBookingByIdOnAfterFetch</em>, I
+assigned the dates from the database to their corresponding local variables
+from step 1. Here, I checked if the saved dates were null dates and, if not, I
+converted them into text;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-4.png" alt="Fig. 4. Getting any existing DB values with On After Fetch action" />
+  <figcaption class="figcaption">
+    Fig. 4. Getting any existing DB values with On After Fetch action
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     5. I added the desired <strong>date format</strong> to the Date
+Picker’s DateFormat property;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-5.png" alt="Fig. 5. Setting the Date Picker’s date format" />
+  <figcaption class="figcaption">
+    Fig. 5. Setting the Date Picker’s date format
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     6. I set the OnSelect handler of the Date Pickers to
+their corresponding actions. Each picker has its own handler action - 
+<em>OnSelectDate_StartDate</em> and <em>OnSelectDate_EndDate</em>;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-6.png" alt="Fig. 6. Setting the Date Picker’s OnSelect handlers" />
+  <figcaption class="figcaption">
+    Fig. 6. Setting the Date Picker’s OnSelect handlers
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>     7. To be able to save the new selected dates, I added
+the following assign on my <em>CreateEditBooking</em> action:</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-7.png" alt="Fig. 7. Saving the Date Picker’s dates" />
+  <figcaption class="figcaption">
+    Fig. 7. Saving the Date Picker’s dates
+  </figcaption>
+</div>
+<p><br /></p>
+
+<p>And that’s how I sorted the issue with the date format.</p>
+
+<p>Check out <a href="http://localhost:4000/work/2021/01/21/outsystems-datepicker-pt2.html">Part 2</a>
+of this guide to see how I tackled points 2 and 3 from the list!</p>
+
+
+    </div>
+    <footer class="post-footer">
+      <div></div>
+      <div>categories:
+        
+        
+          <a href="/category/work">work</a>
+        
+      </div>
+      <div>tags:
+        
+        
+          <a href="/outsystems">outsystems</a>
+        
+          <a href="/service-studio">service-studio</a>
+        
+          <a href="/web-development">web-development</a>
+        
+      </div>
+    </footer>
+  </article>
+</div>
+
+    </div>
+
+    <footer class="footer">
+  <ul>
+    <li>
+      <a href="mailto: vanessaesanto@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/vanessaes" target="_blank" class="social-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/twikah" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/define_vanessa" target="_blank" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+
+  <h3>
+    Crafted with <i class="fa fa-heart" aria-hidden="true"></i>
+    by <a href="http://twikah.rocks/" target="_blank">twikah</a>
+  </h3>
+
+</footer>
+
+
+
+
+  </body>
+</html>

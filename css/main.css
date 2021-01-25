@@ -50,6 +50,7 @@ code {
   background-color: rgba(70,106,112, 0.1);
   border-radius: 5px;
   font-family: monospace;
+  font-size: 13px;
   padding: 5px;
   display: inline-block;
 }
@@ -130,6 +131,9 @@ blockquote::before{
   left: 10px;
   position: absolute;
   top: -10px;
+}
+.figcaption {
+  font-size: 12px;
 }
 
 /* HEADER STYLES */

@@ -1,0 +1,111 @@
+I"a<p>This is the Part 2 of a how-to guide on how to implement the OutSystems’
+built-in Date Picker widget and override some undesired behaviour on the way.</p>
+
+<p><br /></p>
+
+<p>On <a href="https://twikah.github.io/work/2021/01/19/outsystems-datepicker-pt1.html">Part 1</a>
+of this guide, I handled the Date Picker set up and fixed an issue with its
+date format. Now, I’ll show you how I sorted the issues of:</p>
+
+<p>     - Being able to write on an Input bound to a Date Picker
+<strong>(point 2 from Part 1)</strong>, and;</p>
+
+<p>     - How to remove a date from a Date Picker
+<strong>(point 3 from Part 1)</strong>;</p>
+
+<p><br /></p>
+
+<p>To tackle these points, I added a snippet of javascript to the code. The idea is
+to add the JS snippet when the page is ready, to <strong>(point 2) prevent the user
+from typing on the Input widget</strong> and <strong>(point 3) to call a new action if the
+user clicks on delete</strong>. This new action <strong>forces the local variable to be
+assigned to a null date whenever the user clicks on delete</strong>.</p>
+
+<p><br /></p>
+
+<p>On the snippet below, I added a <strong>listener to each Date Picker and corresponding
+input container</strong> to call the action <em>DatePickerOnSelect_DeleteStart</em> or
+<em>DatePickerOnSelect_DeleteEnd</em> if the user clicked on the delete key (keyCode 46)
+and to also prevent the default behaviour on the Input widgets and thus
+preventing the user from typing anything on those inputs.</p>
+
+<p><br /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="o">(</span><span class="s1">"#"</span> <span class="o">+</span> <span class="err">$</span><span class="nt">parameters</span><span class="nc">.StartContainerId</span> <span class="o">+</span> <span class="s1">".DatePickerInput"</span><span class="o">)</span><span class="nc">.on</span><span class="o">(</span><span class="s1">"keydown"</span><span class="o">,</span> <span class="nt">function</span><span class="o">(</span><span class="nt">event</span><span class="o">)</span> <span class="p">{</span>
+  <span class="err">if</span> <span class="err">(event.keyCode</span> <span class="err">===</span> <span class="err">46</span> <span class="err">)</span> <span class="err">{</span>
+    <span class="err">$actions.DatePickerOnSelect_DeleteStart();</span>
+  <span class="p">}</span>
+  <span class="nt">event</span><span class="nc">.preventDefault</span><span class="o">();</span>
+<span class="err">}</span><span class="o">);</span>
+
+<span class="err">$</span><span class="o">(</span><span class="s1">"#"</span> <span class="o">+</span> <span class="err">$</span><span class="nt">parameters</span><span class="nc">.EndContainerId</span> <span class="o">+</span> <span class="s1">".DatePickerInput"</span><span class="o">)</span><span class="nc">.on</span><span class="o">(</span><span class="s1">"keydown"</span><span class="o">,</span> <span class="nt">function</span><span class="o">(</span><span class="nt">event</span><span class="o">)</span> <span class="p">{</span>
+  <span class="err">if</span> <span class="err">(event.keyCode</span> <span class="err">===</span> <span class="err">46</span> <span class="err">)</span> <span class="err">{</span>
+    <span class="err">$actions.DatePickerOnSelect_DeleteEnd();</span>
+  <span class="p">}</span>
+  <span class="nt">event</span><span class="nc">.preventDefault</span><span class="o">();</span>
+<span class="err">}</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>     1. I selected the Screen that contains de the Date
+Pickers, <strong>selected the OnReady option on its event property</strong> to create the
+<em>OnReady</em> action;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-8.png" alt="Fig. 1. Setting OnReady event for the VacationCreationWidgets screen" />
+</div>
+<p><br /></p>
+
+<p>     2. On the flow of the <em>OnReady</em> action, <strong>I added a
+JavaScript widget</strong>. I opened it, created as many input parameters as Date
+Pickers on the screen — in my case, I created 2 and named them <em>StartContainerId</em>
+and <em>EndContainerId</em>;</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-9-1.png" alt="Fig. 2.1. Adding a JS widget and the corresponding input parameters to the OnReady action" />
+</div>
+<p><br /></p>
+
+<p>I opened the JavaScript widget and added the snippet below (which is already
+posted above);</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img class="img-large" src="/images/os_datepicker-9-2.png" alt="Fig 2.2. Adding the JS code to the JS widget" />
+</div>
+<p><br /></p>
+
+<p>The JS input parameters should be <strong>assigned to the id of the container that
+surrounds each Date Picker</strong> and corresponding Input widgets — check Fig. 2.1.
+bottom right to see the containers being assigned to the JS input parameters.
+We need to add a name to the containers to be able to assign them to the input
+parameters.</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-9-3.png" alt="Fig. 2.3. Setting the name of the container to be able to assign it to the JS widget’s input parameters" />
+</div>
+<p><br /></p>
+
+<p>     3. The <strong>delete actions</strong> are pretty simple. I just
+added an assign to clear the contents of each corresponding variable
+<em>PickedBookingStartDate</em> and <em>PickedBookingEndDate</em>.</p>
+
+<p><br /></p>
+<div class="center-img">
+  <img src="/images/os_datepicker-10.png" alt="Fig. 3. Setting up the delete actions" />
+</div>
+<p><br /></p>
+
+<p>That’s it!</p>
+
+<p><br /></p>
+
+<p>If you have questions about any of the steps detailed above as well as anything
+from <a href="https://twikah.github.io/work/2021/01/19/outsystems-datepicker-pt1.html">Part 1</a>
+of the guide or if you have suggestions to improve the
+implementation of the Date Pickers, please reach out!</p>
+:ET
