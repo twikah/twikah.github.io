@@ -12,28 +12,28 @@ built-in Date Picker widget and override some undesired behaviour on the way.
 
 On [Part 1](https://twikah.github.io/work/2021/01/19/outsystems-datepicker-pt1.html)
 of this guide, I handled the Date Picker set up and fixed an issue with its
-date format. Now, I’ll show you how I sorted the issues of:
+date format. Now, I’ll show you how I managed to:
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Being able to write on an Input bound to a Date Picker
+&nbsp;&nbsp;&nbsp;&nbsp; - Disable writing on an Input bound to a Date Picker
 **(point 2 from Part 1)**, and;
 
-&nbsp;&nbsp;&nbsp;&nbsp; - How to remove a date from a Date Picker
+&nbsp;&nbsp;&nbsp;&nbsp; - Remove a date from a Date Picker
 **(point 3 from Part 1)**;
 
 <br>
 
 To tackle these points, I added a snippet of javascript to the code. The idea is
-to add the JS snippet when the page is ready, to **(point 2) prevent the user
-from typing on the Input widget** and **(point 3) to call a new action if the
-user clicks on delete**. This new action **forces the local variable to be
-assigned to a null date whenever the user clicks on delete**.
+to add the JS snippet when the page is ready, to **prevent the user from typing
+on the Input widget (point 2)** and **call a new action if the user clicks on
+delete (point 3)**. This new action **forces the local variable to be
+set to a null whenever the user clicks on delete**.
 
 <br>
 
 On the snippet below, I added a **listener to each Date Picker and corresponding
 input container** to call the action *DatePickerOnSelect_DeleteStart* or
-*DatePickerOnSelect_DeleteEnd* if the user clicked on the delete key (keyCode 46)
-and to also prevent the default behaviour on the Input widgets and thus
+*DatePickerOnSelect_DeleteEnd* if the user presses the delete key (keyCode 46)
+and also prevent the default behaviour on the Input widgets and thus
 preventing the user from typing anything on those inputs.
 
 <br>
@@ -56,7 +56,7 @@ $("#" + $parameters.EndContainerId + ".DatePickerInput").on("keydown", function(
 
 <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp; 1. I selected the Screen that contains de the Date
+&nbsp;&nbsp;&nbsp;&nbsp; 1. I selected the Screen that contains the Date
 Pickers, **selected the OnReady option on its event property** to create the
 *OnReady* action;
 
@@ -71,8 +71,8 @@ Pickers, **selected the OnReady option on its event property** to create the
 <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp; 2. On the flow of the *OnReady* action, **I added a
-JavaScript widget**. I opened it, created as many input parameters as Date
-Pickers on the screen — in my case, I created 2 and named them *StartContainerId*
+JavaScript widget**. I created as many input parameters as Date
+Pickers on the screen — in my case, I added 2 and named them *StartContainerId*
 and *EndContainerId*;
 
 <br>
@@ -87,7 +87,7 @@ and *EndContainerId*;
 </div>
 <br>
 
-I opened the JavaScript widget and added the snippet below (which is already
+On the JavaScript widget, I added the snippet below (which is already
 posted above);
 
 <br>
